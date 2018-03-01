@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <p>Parse</p>
+    <form action="/parse" method="post">
+        <input type="text" name="zoom" value="{{ zoom }}" />
+        <button>Parse</button>
+    </form>
+
+    <p>Rename</p>
+    <form action="/rename" method="post">
+        <input type="hidden" name="zoom" value="{{ zoom }}" />
+        <button>Rename</button>
+    </form>
+
+    {% if complete %}
+        <p>{{ complete }}</p>
+    {% endif %}
+{% endblock %}
